@@ -18,7 +18,7 @@ public class MedunnaRoomCreateStepdefs {
     }
 
     @And("enter {string} room number input")
-    public void enterRoomNumberInput(String arg0, String arg1) {
+    public void enterRoomNumberInput(String arg0) {
     }
 
     @And("select Suite option from Room Type dropdown")
@@ -30,11 +30,11 @@ public class MedunnaRoomCreateStepdefs {
     }
 
     @And("enter {string} in Price input")
-    public void enterInPriceInput(String arg0, String arg1) {
+    public void enterInPriceInput(String arg0) {
     }
 
     @And("enter {string} in Description input")
-    public void enterInDescriptionInput(String arg0, String arg1) {
+    public void enterInDescriptionInput(String arg0) {
     }
 
     @And("click on Save button")
