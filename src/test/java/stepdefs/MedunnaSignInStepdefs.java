@@ -3,12 +3,16 @@ package stepdefs;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import org.checkerframework.checker.units.qual.C;
 import pages.MedunnaHomePage;
+import pages.MedunnaLoginPage;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class MedunnaSignInStepdefs {
 
     MedunnaHomePage medunnaHomePage = new MedunnaHomePage();
+    MedunnaLoginPage medunnaLoginPage = new MedunnaLoginPage();
     @Given("Go to {string}")
     public void goTo(String url) {
         Driver.getDriver().get(url);
@@ -27,11 +31,13 @@ public class MedunnaSignInStepdefs {
 
     @And("enter username")
     public void enterUsername() {
+        medunnaLoginPage.usernameInput.sendKeys(ConfigReader.getProperty("medunna_username"));
 
     }
 
     @And("enter password")
     public void enterPassword() {
+        medunnaLoginPage.passwordInput.sendKeys(ConfigReader.getProperty("medunna_password"));
     }
 
     @And("click on sign in submit  button")
