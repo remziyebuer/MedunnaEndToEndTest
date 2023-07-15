@@ -1,47 +1,74 @@
 package stepdefs;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.support.ui.Select;
+import pages.MedunnaHomePage;
+import pages.MedunnaRoomPage;
+import utilities.Driver;
 
 public class MedunnaRoomCreateStepdefs {
 
+    MedunnaHomePage medunnaHomePage = new MedunnaHomePage();
+    MedunnaRoomPage medunnaRoomPage = new MedunnaRoomPage();
+
     @When("Click on ItemsAndTitles")
     public void clickOnItemsAndTitles() {
+        medunnaHomePage.itemsdAndTitles.click();
+
+
     }
 
     @And("click on Room option")
     public void clickOnRoomOption() {
+        medunnaHomePage.roomOption.click();
     }
+
 
     @And("click on Create a new room button")
     public void clickOnCreateANewRoomButton() {
+        medunnaRoomPage.createANewRoomButton.click();
     }
 
     @And("enter {string} room number input")
-    public void enterRoomNumberInput(String arg0) {
+    public void enterRoomNumberInput(String roomNumber) {
+       int roomNumberFaker = Faker.instance().number().numberBetween(100000,1000000);
+        medunnaRoomPage.roomNumberInput.sendKeys(roomNumberFaker + "");
+        //send keys int kabul etmedigi icin roomnumberfaker kirmizi yandi bununn icin concatination ile
+        //onu string yaptik
+
+
     }
 
     @And("select Suite option from Room Type dropdown")
     public void selectSuiteOptionFromRoomTypeDropdown() {
+        new Select(medunnaRoomPage.roomTypeDropDown).selectByIndex(3);
+        //select objesinin icine web element yazilir.
     }
 
     @And("click on Status checkbox")
     public void clickOnStatusCheckbox() {
+        medunnaRoomPage.statusCheckbox.click();
     }
 
     @And("enter {string} in Price input")
-    public void enterInPriceInput(String arg0) {
+    public void enterInPriceInput(String price) {
+        medunnaRoomPage.priceInput.sendKeys(price);
     }
 
     @And("enter {string} in Description input")
-    public void enterInDescriptionInput(String arg0) {
+    public void enterInDescriptionInput(String description) {
+        medunnaRoomPage.descriptionInput.sendKeys(description);
     }
 
     @And("click on Save button")
     public void clickOnSaveButton() {
+        medunnaRoomPage.saveSubmitButton.click();
     }
 
     @And("close the application")
     public void closeTheApplication() {
+        Driver.quitDriver();
     }
 }

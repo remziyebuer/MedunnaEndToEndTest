@@ -42,6 +42,7 @@ public class MedunnaSignInStepdefs {
 
     @And("click on sign in submit  button")
     public void clickOnSignInSubmitButton() {
+        medunnaLoginPage.signInSubmitButton.click();
     }
 
 
