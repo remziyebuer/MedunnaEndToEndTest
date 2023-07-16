@@ -43,6 +43,9 @@ public class MedunnaSignInStepdefs {
     @And("click on sign in submit  button")
     public void clickOnSignInSubmitButton() {
         medunnaLoginPage.signInSubmitButton.click();
+        //eger butona tiklamaz ise submit kullanabilirsin.ya da java script ya da
+        //new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN); kullanilabilir
+
     }
 
 

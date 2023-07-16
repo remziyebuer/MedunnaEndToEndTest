@@ -13,6 +13,8 @@ public class MedunnaRoomCreateStepdefs {
     MedunnaHomePage medunnaHomePage = new MedunnaHomePage();
     MedunnaRoomPage medunnaRoomPage = new MedunnaRoomPage();
 
+    public static int roomNumberFaker;
+
     @When("Click on ItemsAndTitles")
     public void clickOnItemsAndTitles() {
         medunnaHomePage.itemsdAndTitles.click();
@@ -33,7 +35,7 @@ public class MedunnaRoomCreateStepdefs {
 
     @And("enter {string} room number input")
     public void enterRoomNumberInput(String roomNumber) {
-       int roomNumberFaker = Faker.instance().number().numberBetween(100000,1000000);
+        roomNumberFaker = Faker.instance().number().numberBetween(100000,1000000);
         medunnaRoomPage.roomNumberInput.sendKeys(roomNumberFaker + "");
         //send keys int kabul etmedigi icin roomnumberfaker kirmizi yandi bununn icin concatination ile
         //onu string yaptik

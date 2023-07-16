@@ -1,5 +1,4 @@
-
-@e2e
+@e2e @ui
 Feature: Medunna Room Creation
 
   Background: Sign in Medunna
