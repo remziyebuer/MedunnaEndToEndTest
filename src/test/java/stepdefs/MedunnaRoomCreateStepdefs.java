@@ -13,7 +13,12 @@ public class MedunnaRoomCreateStepdefs {
     MedunnaHomePage medunnaHomePage = new MedunnaHomePage();
     MedunnaRoomPage medunnaRoomPage = new MedunnaRoomPage();
 
+    //bir ariable nin üstüne gelip altinda cizgi cikinca control basili
+    // tiklarsan nerelerde kullanildigini görürsün
+
     public static int roomNumberFaker;
+
+    public static String roomId;//diger classlardan erisebilmek icin class levelinda static yaptik
 
     @When("Click on ItemsAndTitles")
     public void clickOnItemsAndTitles() {
@@ -35,7 +40,7 @@ public class MedunnaRoomCreateStepdefs {
 
     @And("enter {string} room number input")
     public void enterRoomNumberInput(String roomNumber) {
-        roomNumberFaker = Faker.instance().number().numberBetween(100000,1000000);
+        roomNumberFaker = Faker.instance().number().numberBetween(100000, 1000000);
         medunnaRoomPage.roomNumberInput.sendKeys(roomNumberFaker + "");
         //send keys int kabul etmedigi icin roomnumberfaker kirmizi yandi bununn icin concatination ile
         //onu string yaptik
@@ -65,8 +70,12 @@ public class MedunnaRoomCreateStepdefs {
     }
 
     @And("click on Save button")
-    public void clickOnSaveButton() {
+    public void clickOnSaveButton() throws InterruptedException {
         medunnaRoomPage.saveSubmitButton.click();
+        Thread.sleep(2000);
+        roomId = medunnaRoomPage.alert.getText().replaceAll("[^0-9]","");
+        System.out.println("roomId = " + roomId);
+
     }
 
     @And("close the application")

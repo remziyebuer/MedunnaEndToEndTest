@@ -17,3 +17,4 @@ import org.junit.runner.RunWith;
 public class Runner {
 
 }
+//yanda ki dosyalarda classlarda herhangi bir yer ecili iken yazi yazmaya baslayinca  arama cubugu cikiyor***

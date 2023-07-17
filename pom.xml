@@ -48,6 +48,8 @@
             <version>1.0.2</version>
         </dependency>
 
+        <!--********pom ' ajackson koymadik cün ki o cucumberda mevcut dedi yasin hoca -->
+
         <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -61,6 +63,13 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+            <scope>provided</scope>
         </dependency>
 
 

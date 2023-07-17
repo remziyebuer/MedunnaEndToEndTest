@@ -23,3 +23,5 @@ Feature: Medunna Room Creation
     Examples:
       | room_number | price | description                 |
       | 72244940    | 123   | Created For End To End Test |
+
+    #feature dosyalarinin siralanmasi calisma sirasini belirler TC01;TC02....vs
