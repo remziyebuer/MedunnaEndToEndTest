@@ -31,6 +31,7 @@ public class ApiRoomStepDefs {
 
     @Then("validate body")
     public void validateBody() {
+        //Grovy ile kendi olusturdugumuz roomNumber' i kullanarak olusturdugumuz odayi filtreliyoruz
         Object roomType = response.jsonPath().getList("findAll{it.roomNumber==" + roomNumberFaker + "}.roomType").get(0);
         System.out.println("roomType = " + roomType);
         Object status = response.jsonPath().getList("findAll{it.roomNumber==" + roomNumberFaker + "}.status").get(0);
@@ -59,7 +60,7 @@ public class ApiRoomStepDefs {
         expectedData = new RoomPojo(roomNumberFaker, "SUITE", true, 123.00, "Created For End To End Test");
         //Send the request and get the response
         response = given(spec).get("{first}/{second}/{third}");
-        response.prettyPrint();
+        //response.prettyPrint();
 
     }
 

@@ -13,7 +13,7 @@ public class MedunnaRoomCreateStepdefs {
     MedunnaHomePage medunnaHomePage = new MedunnaHomePage();
     MedunnaRoomPage medunnaRoomPage = new MedunnaRoomPage();
 
-    //bir ariable nin üstüne gelip altinda cizgi cikinca control basili
+    //bir variable nin üstüne gelip altinda cizgi cikinca control basili
     // tiklarsan nerelerde kullanildigini görürsün
 
     public static int roomNumberFaker;
